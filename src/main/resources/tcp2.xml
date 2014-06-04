@@ -1,5 +1,5 @@
 <config>
-	<TCP bind_addr="pa056643.ad.pvt" bind_port="7800" />
+    <TCP bind_addr="GLOBAL" bind_port="7800" />
 	<TCPPING timeout="3000"
 	         initial_hosts="pa056643.ad.pvt[7800],pa056643.ad.pvt[7801]"
 	port_range="1"

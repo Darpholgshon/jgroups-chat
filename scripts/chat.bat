@@ -1,0 +1,1 @@
+java -Djava.net.preferIPv4Stack=true -classpath .\jgroups-3.4.1-Final.jar -jar jgroups-chat-1.0.jar

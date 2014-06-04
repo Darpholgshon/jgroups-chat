@@ -26,9 +26,9 @@ public class JGroupsChat extends ReceiverAdapter
     private void start()
             throws Exception
     {
-        channel = new JChannel("tcp.xml");
+        channel = new JChannel("tcp2.xml");
         channel.setReceiver(this);
-        channel.connect("JGroupsChat");
+        channel.connect("Developers");
 
         // Loop til we don't want to talk anymore.
         eventLoop();

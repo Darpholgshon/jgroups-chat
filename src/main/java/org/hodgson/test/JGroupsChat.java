@@ -17,7 +17,7 @@ public class JGroupsChat extends ReceiverAdapter
     static
     {
         System.setProperty("java.net.preferIPv4Stack", "true");
-        System.setProperty("jgroups.tcpping.initial_hosts", "10.253.197.203[7800], 10.253.197.68[7800]");
+        System.setProperty("jgroups.tcpping.initial_hosts", "10.253.197.203[7810], 10.253.197.68[7810]");
     }
 
     JChannel channel;

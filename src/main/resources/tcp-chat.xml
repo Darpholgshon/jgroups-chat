@@ -7,8 +7,9 @@
 -->
 <config xmlns="urn:org:jgroups"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="urn:org:jgroups http://www.jgroups.org/schema/JGroups-3.1.xsd">
-	<TCP bind_port="7800"
+        xsi:schemaLocation="urn:org:jgroups http://www.jgroups.org/schema/JGroups-3.4.xsd">
+	<TCP
+         bind_port="7800"
 	     loopback="false"
 	     recv_buf_size="20M"
 	     send_buf_size="640K"
@@ -39,10 +40,12 @@
 	     oob_thread_pool.keep_alive_time="5000"
 	     oob_thread_pool.queue_enabled="false"
 	     oob_thread_pool.queue_max_size="100"
-	     oob_thread_pool.rejection_policy="discard"/>
+	     oob_thread_pool.rejection_policy="discard"
+
+         defer_client_bind_addr="true" />
 
 	<TCPPING timeout="3000"
-	         initial_hosts="10.253.197.203[7800],10.253.197.203[7800]"
+	         initial_hosts="10.253.197.203[7800],10.253.197.68[7800]"
 	         port_range="1"
 	         num_initial_members="10"/>
 	<MERGE2  min_interval="10000"

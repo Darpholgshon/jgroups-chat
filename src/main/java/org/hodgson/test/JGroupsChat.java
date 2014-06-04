@@ -4,6 +4,7 @@ import org.jgroups.JChannel;
 import org.jgroups.Message;
 import org.jgroups.ReceiverAdapter;
 import org.jgroups.View;
+import org.jgroups.stack.Protocol;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -18,7 +19,7 @@ public class JGroupsChat extends ReceiverAdapter
     {
         System.setProperty("java.net.preferIPv4Stack", "true");
 //        System.setProperty("jgroups.bind_addr","10.253.197.203");
-        System.setProperty("jgroups.tcpping.initial_hosts", "10.253.197.203[7800], 10.253.197.68[7800]");
+//        System.setProperty("jgroups.tcpping.initial_hosts", "10.253.197.203[7800], 10.253.197.68[7800]");
     }
 
     JChannel channel;
@@ -27,13 +28,18 @@ public class JGroupsChat extends ReceiverAdapter
     private void start()
             throws Exception
     {
-        channel = new JChannel("tcp-chat.xml");
+        channel = new JChannel("tcp-ec2.xml");
         channel.setReceiver(this);
         channel.connect("JGroupsChat");
 
         System.out.println("--------- PROPS --------------");
         System.out.println(channel.getProperties());
         System.out.println("-----------------------------");
+
+
+        Protocol protocol = channel.getProtocolStack().findProtocol("TCPPING");
+        System.out.println("****************** PROTOCOL ****************************");
+        System.out.println(protocol.getValue("initial_hosts"));
 
         // Loop til we don't want to talk anymore.
         eventLoop();

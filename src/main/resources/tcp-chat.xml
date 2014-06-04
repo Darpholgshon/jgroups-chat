@@ -40,9 +40,7 @@
 	     oob_thread_pool.keep_alive_time="5000"
 	     oob_thread_pool.queue_enabled="false"
 	     oob_thread_pool.queue_max_size="100"
-	     oob_thread_pool.rejection_policy="discard"
-
-         defer_client_bind_addr="true" />
+	     oob_thread_pool.rejection_policy="discard"/>
 
 	<TCPPING timeout="3000"
 	         initial_hosts="10.253.197.203[7800],10.253.197.68[7800]"
